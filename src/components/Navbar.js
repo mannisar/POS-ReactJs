@@ -23,10 +23,16 @@ class Navbar extends Component {
               to="/api/order/history"
             ></Link>
             <span
+              className="fa fa-plus"
+              style={fontAW}
+              data-toggle="modal"
+              data-target="#modalinput"
+            ></span>
+            <span
               className="fa fa-minus"
               style={fontAW}
               data-toggle="modal"
-              data-target="#exampleModal"
+              data-target="#modaldelete"
             ></span>
           </div>
           <nav className="navbar navbar-light bg-white">

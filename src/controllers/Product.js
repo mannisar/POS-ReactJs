@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Card from "../components/Card";
-import Modal from "../components/Modal";
 
 class Product extends Component {
   constructor(props) {
@@ -10,7 +9,7 @@ class Product extends Component {
       ArrProducts: [],
       ArrProductsId: []
     };
-    this.deleteProduct = this.deleteProduct.bind(this);
+    //this.deleteProduct = this.deleteProduct.bind(this);
   }
 
   readProduct() {
@@ -22,16 +21,6 @@ class Product extends Component {
       .catch(console.log);
   }
 
-  deleteProduct = productId => {
-    axios
-      .delete(`http://localhost:3004/api/product/${productId}`)
-      .then(response => {
-        this.setState({ ArrProductsId: response.data.result });
-        this.componentDidMount();
-      })
-      .catch(console.log);
-  };
-
   componentDidMount() {
     this.readProduct();
   }
@@ -40,7 +29,6 @@ class Product extends Component {
     return (
       <React.Fragment>
         <Card ArrProducts={this.state.ArrProducts} />
-        <Modal ArrProductsId={this.state.ArrProductsId} />
       </React.Fragment>
     );
   }
