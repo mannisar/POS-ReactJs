@@ -1,9 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import Order from "../controllers/Order";
 
 class Cart extends Component {
   render() {
-    return <Order />;
+    return (
+      <Fragment>
+        <Order />
+      </Fragment>
+    )
   }
 }
 

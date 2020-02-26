@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 
 class Order extends Component {
   state = {
@@ -6,7 +6,7 @@ class Order extends Component {
   };
   render() {
     return (
-      <React.Fragment>
+      <Fragment>
         <nav
           className="navbar navbar-light bg-white"
           style={{ paddingLeft: "9rem" }}
@@ -21,7 +21,7 @@ class Order extends Component {
             <img src="/Cart.png" className="card-img-top" alt="Images.jpg" />
           </div>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
   getBadgeClasses() {

@@ -79,3 +79,10 @@ body {
 .form-inline {
   border-bottom: 1px solid #000;
 }
+
+@media (min-width: 768px) {
+  .scroll {
+    position: relative;
+    overflow-y: scroll;
+  }
+}

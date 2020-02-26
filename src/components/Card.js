@@ -3,8 +3,8 @@ import React, { Component } from "react";
 class Card extends Component {
   render() {
     return (
-      <div className="row" id="row_posts">
-        {this.props.ArrProducts.map((product, index) => (
+      <div className="row scroll" id="row_posts">
+        {this.props.ArrProduct.map((product, index) => (
           <div className="col-sm-2" id="col_posts" key={product.id}>
             <div className="card" id="card_posts">
               <img
