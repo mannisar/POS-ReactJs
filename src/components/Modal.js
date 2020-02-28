@@ -30,15 +30,6 @@ const Modal = ({ onField, onFieldIMG, onFieldID, createProduct, updateProduct, d
             <div className="modal-body">
               <form>
                 <div className="form-group">
-                  <label className="col-form-label">Id:</label>
-                  <input
-                    type="text"
-                    name="productId"
-                    className="form-control"
-                    onChange={onField}
-                  />
-                </div>
-                <div className="form-group">
                   <label className="col-form-label">Name:</label>
                   <input
                     type="text"
@@ -54,14 +45,6 @@ const Modal = ({ onField, onFieldIMG, onFieldID, createProduct, updateProduct, d
                     name="description"
                     className="form-control"
                     onChange={onField}
-                  />
-                </div>
-                <div className="form-group">
-                  <label className="col-form-label">Image:</label>
-                  <input
-                    type="file"
-                    className="form-control"
-                    onChange={onFieldIMG}
                   />
                 </div>
                 <div className="form-group">
@@ -89,6 +72,16 @@ const Modal = ({ onField, onFieldIMG, onFieldID, createProduct, updateProduct, d
                     <option value={1}>Food</option>
                     <option value={2}>Drink</option>
                   </select>
+                </div>
+                <div className="form-group">
+                  <label className="col-form-label">Image:</label>
+                  <input
+                    type="file"
+                    className="form-control"
+                    name="image"
+                    style={{ border: 'none' }}
+                    onChange={onFieldIMG}
+                  />
                 </div>
               </form>
             </div>
@@ -166,14 +159,6 @@ const Modal = ({ onField, onFieldIMG, onFieldID, createProduct, updateProduct, d
                   />
                 </div>
                 <div className="form-group">
-                  <label className="col-form-label">Image:</label>
-                  <input
-                    type="file"
-                    className="form-control"
-                    onChange={onFieldIMG}
-                  />
-                </div>
-                <div className="form-group">
                   <label className="col-form-label">Price:</label>
                   <input
                     type="text"
@@ -192,12 +177,20 @@ const Modal = ({ onField, onFieldIMG, onFieldID, createProduct, updateProduct, d
                   />
                 </div>
                 <div className="form-group">
-                  <label className="col-form-label">Category ID:</label>
+                  <label className="col-form-label">Category:</label>
+                  <select className="form-control" name="categoryId" onChange={onField}>
+                    <option selected defaultValue disabled={true}>Choose..</option>
+                    <option value={1}>Food</option>
+                    <option value={2}>Drink</option>
+                  </select>
+                </div>
+                <div className="form-group">
+                  <label className="col-form-label">Image:</label>
                   <input
-                    type="text"
-                    name="categoryId"
+                    type="file"
                     className="form-control"
-                    onChange={onField}
+                    style={{ border: 'none' }}
+                    onChange={onFieldIMG}
                   />
                 </div>
               </form>

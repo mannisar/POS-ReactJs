@@ -23,8 +23,11 @@ class Card extends Component {
                 >
                   {product.name_product}
                 </h5>
-                <p className="card-text" style={{ fontSize: 12 }}>
+                <p className="card-text" style={{ fontSize: 14 }}>
                   Rp.{product.price}
+                </p>
+                <p className="card-text" style={{ fontSize: 14, fontWeight: 'bold' }}>
+                  Tersisa: {product.stock}
                 </p>
               </div>
             </div>

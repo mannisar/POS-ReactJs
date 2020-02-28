@@ -7,6 +7,7 @@ body {
 body {
   background-color: #ffffff;
   font-family: "Consolas", sans-serif;
+  overflow: hidden;
 }
 
 .row {

@@ -1,20 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
-import Product from "./controllers/Product";
-import Cart from "./components/Cart";
+import Login from "./auth/Login"
+import Home from "./controllers/Home"
+import Product from "./controllers/Product"
 
 function App() {
   return (
     <Router>
-      <div className="row">
-        <div className="col-md-9" id="col_posts">
-          <Product />
-        </div>
-        <div className="col-md-3" id="col_posts">
-          <Cart />
-        </div>
-      </div>
+      <Route exact path="/api" component={Home} />
+      <Route path="/login" component={Login} />
+      {/* <Route path="/api/product" component={Product} /> */}
     </Router>
   );
 }

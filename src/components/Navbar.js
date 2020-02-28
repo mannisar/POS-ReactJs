@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
-const Navbar = ({ onFieldSearch }) => {
+const Navbar = ({ onFieldSearch, onSort }) => {
   const fontAW = {
     cursor: "pointer",
     color: "#fa7578",
@@ -10,34 +10,41 @@ const Navbar = ({ onFieldSearch }) => {
     textDecoration: "none",
     fontSize: "1.5em"
   };
+
+  const titleAW = {
+    display: "inline-grid",
+    marginLeft: "25px",
+    marginBottom: "10px",
+    fontSize: "unset",
+    textAlign: "center"
+  }
   return (
     <Fragment>
       <div className="pos-f-t">
         <div className="collapse" id="navbarToggleExternalContent">
-          <Link className="fa fa-cutlery" style={fontAW} to="/"></Link>
-          <Link
-            className="fa fa-file"
-            style={fontAW}
-            to="/api/order/history"
-          ></Link>
+          <span style={titleAW}><Link className="fa fa-home" style={fontAW} to="/api" />HOME</span>
+          {/* <span style={titleAW}><Link className="fa fa-cutlery" style={fontAW} to="/api/product" />PRODUCT</span>
+          <span style={titleAW}><Link className="fa fa-tags" style={fontAW} to="#" />CATEGORY</span>
+          <span style={titleAW}><Link className="fa fa-bar-chart" style={fontAW} to="#" />HISTROY</span>
+          <span style={titleAW}><Link className="fa fa-sign-out" style={fontAW} to="#" />LOGOUT</span> */}
           <span
-            className="fa fa-plus"
-            style={fontAW}
+            style={titleAW}
             data-toggle="modal"
             data-target="#modalinput"
-          ></span>
+          ><Link className="fa fa-plus"
+            style={fontAW} to="#" />ADD PRODUCT</span>
           <span
-            className="fa fa-pencil"
-            style={fontAW}
+            style={titleAW}
             data-toggle="modal"
             data-target="#modaledit"
-          ></span>
+          ><Link className="fa fa-pencil-square-o"
+            style={fontAW} to="#" />EDIT PRODUCT</span>
           <span
-            className="fa fa-minus"
-            style={fontAW}
+            style={titleAW}
             data-toggle="modal"
             data-target="#modaldelete"
-          ></span>
+          ><Link className="fa fa-trash-o"
+            style={fontAW} to="#" />DELETE PRODUCT</span>
         </div>
         <nav className="navbar navbar-light bg-white">
           <button
@@ -52,10 +59,18 @@ const Navbar = ({ onFieldSearch }) => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <span className="navbar-text" style={{ fontSize: 16, color: 'black' }}>
-
-            Food Items
+            CASHIERUN V1.3
             </span>
           <form className="form-inline">
+            <div className="dropdown">
+              <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                SORT
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <button className="dropdown-item" type="button" onClick={onSort} value={'price'}>LOW PRICE</button>
+                <button className="dropdown-item" type="button" onClick={onSort} value={'date_updated'}>NEW MENU</button>
+              </div>
+            </div>
             <input
               className="form-control"
               style={{ border: "none" }}
@@ -67,7 +82,7 @@ const Navbar = ({ onFieldSearch }) => {
           </form>
         </nav>
       </div>
-    </Fragment>
+    </Fragment >
   );
 }
 
