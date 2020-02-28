@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import ParentProduct from './ParentProduct';
+import Product from "./Product";
 
 class Home extends Component {
     componentDidMount() {
@@ -18,7 +18,7 @@ class Home extends Component {
     render() {
         return (
             <Fragment>
-                <ParentProduct />
+                <Product />
             </Fragment >
         )
     }

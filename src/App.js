@@ -3,14 +3,12 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Login from "./auth/Login"
 import Home from "./controllers/Home"
-import Product from "./controllers/Product"
 
 function App() {
   return (
     <Router>
       <Route exact path="/api" component={Home} />
       <Route path="/login" component={Login} />
-      {/* <Route path="/api/product" component={Product} /> */}
     </Router>
   );
 }
